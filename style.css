@@ -1,20 +1,132 @@
-document.getElementById("form-primeiros-socorros").addEventListener("submit", function(event) {
-    event.preventDefault();
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Cor de fundo neutra */
+    margin: 0;
+    padding: 0;
+    padding-bottom: 60px; /* Espaço para o rodapé */
+}
 
-    const nome = document.getElementById("nome").value;
-    const primeirosSocorros = document.getElementById("primeiros-socorros").value;
-    const intensidade = document.getElementById("intensidade").value;
+header {
+    background-color: #5a9bd4; /* Azul suave */
+    color: white;
+    text-align: center;
+    padding: 1.5em 0; /* Aumentar o padding para mais espaço */
+}
 
-    const resultado = document.getElementById("resultado");
-    resultado.innerHTML = `<p><strong>${nome}</strong>, seus primeiros socorros foram registrados.</p>
-    <p><strong>Descrição:</strong> ${primeirosSocorros}</p>
-    <p><strong>Intensidade:</strong> ${intensidade}</p>`;
-});
+h1 {
+    font-size: 2.5em; /* Tamanho maior para o título */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+    color: #2c3e50; /* Cor do texto mais escura para maior contraste */
+}
 
-function setActiveTab(element) {
-    const links = document.querySelectorAll("nav ul li a");
-    links.forEach(link => {
-        link.classList.remove("active");
-    });
-    element.classList.add("active");
+nav {
+    overflow: hidden; /* Garantir que o menu não saia da tela */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permitir que os itens se movam para a próxima linha se não houver espaço suficiente */
+}
+
+nav ul li {
+    margin: 0 0.5em; /* Diminuir o espaçamento entre os itens do menu */
+}
+
+nav ul li a {
+    color: white; /* Cor do texto do link */
+    text-decoration: none;
+    font-weight: bold; /* Destacar os links */
+    font-size: 0.9em; /* Reduzir o tamanho da fonte do menu */
+    padding: 0.5em 1em; /* Adicionar um pouco de padding para melhorar a usabilidade */
+}
+
+nav ul li a.calculadora,
+nav ul li a.eventos {
+    color: #5a9bd4; /* Azul suave para a calculadora e eventos */
+}
+
+nav ul li a.calculadora:hover,
+nav ul li a.eventos:hover {
+    color: #ffeb3b; /* Altera a cor ao passar o mouse */
+}
+
+nav ul li a.active {
+    text-decoration: underline; /* Adiciona um sublinhado */
+    color: #ffeb3b; /* Altera a cor do texto da aba ativa */
+    font-weight: bold; /* Deixa o texto mais grosso */
+}
+
+section {
+    margin: 2em auto; /* Margem superior e inferior de 2em */
+    width: 80%;
+    background-color: white; /* Fundo branco para o conteúdo */
+    padding: 2em; /* Aumentar o padding */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+h2 {
+    font-size: 2em; /* Tamanho maior para os subtítulos */
+    margin-bottom: 1em; /* Espaço abaixo do subtítulo */
+    color: #34495e; /* Cor do texto mais escura */
+    border-bottom: 3px solid #5a9bd4; /* Linha embaixo para destaque */
+    padding-bottom: 0.5em; /* Espaço entre o texto e a linha */
+    text-transform: uppercase; /* Transformar texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+h3 {
+    font-size: 1.7em; /* Tamanho maior para os subtítulos das seções */
+    margin-bottom: 0.5em; /* Espaço abaixo do subtítulo */
+    color: #2980b9; /* Azul mais forte para os subtítulos */
+    font-weight: 700; /* Negrito */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra para dar um leve destaque */
+}
+
+p {
+    font-size: 1em; /* Tamanho padrão do texto */
+    line-height: 1.6; /* Aumentar o espaçamento entre linhas para melhor legibilidade */
+    color: #666; /* Cor do texto */
+    margin-bottom: 1.5em; /* Espaço abaixo dos parágrafos */
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #5a9bd4; /* Azul suave */
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0; /* Garantir que fique alinhado à esquerda */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Exibir itens do menu em coluna em telas menores */
+        align-items: center; /* Centralizar os itens */
+    }
+    nav ul li {
+        margin: 0.2em 0; /* Diminuir ainda mais o espaçamento vertical */
+    }
+    h1 {
+        font-size: 2em; /* Diminuir o tamanho do título em telas pequenas */
+    }
+    section {
+        width: 90%; /* Aumentar a largura da seção em telas pequenas */
+    }
+}
+
+/* Estilização específica para a seção de Eventos */
+#agenda-eventos {
+    margin: 2em auto; /* Certificar que a margem da seção de eventos seja igual à das outras seções */
+    padding: 2em; /* Certifique-se de que o padding seja consistente */
+    background-color: white; /* Fundo branco para a seção */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra */
 }
