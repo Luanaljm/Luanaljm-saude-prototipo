@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Saúde - Comunitário</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #e0f7fa; /* Cor de fundo azul clara */
+            color: #01579b; /* Cor do texto em azul escuro */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0288d1; /* Azul mais escuro no cabeçalho */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a.active {
+            text-decoration: underline; /* Estilo para o link ativo */
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #0277bd; /* Azul escuro para os títulos */
+        }
+
+        footer {
+            background-color: #0288d1;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        img {
+            border-radius: 8px;
+            margin-top: 1em;
+            max-width: 100%; /* Garante que a torsao.jpg não exceda a largura da tela */
+            height: auto; /* Mantém a proporção da torsao.jpg */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Saúde Comunitário</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> <!-- Link para Home -->
+                <li><a href="index/informacoes.html">Informações de Saúde</a></li> <!-- Link para Informações de Saúde -->
+                <li><a href="index/primeiros_socorros.html">Primeiros Socorros</a></li> <!-- Link para Primeiros Socorros -->
+                <li><a href="index/calculadora.html">Calculadora de IMC</a></li> <!-- Link para a calculadora de IMC -->
+                <li><a href="index/eventos.html">Agenda de Eventos</a></li> <!-- Link para Agenda de Eventos -->
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Bem-vindo ao Sistema de Saúde Comunitária</h2>
+        <p>Este sistema tem como objetivo proporcionar um acompanhamento eficaz da sua saúde e bem-estar. Aqui, você encontrará informações valiosas sobre cuidados básicos de saúde e primeiros socorros, além de recursos para ajudá-lo a tomar decisões informadas. Criamos um espaço acolhedor e intuitivo, onde você pode acessar facilmente as informações necessárias para cuidar da sua saúde e da sua família. Além disso, você poderá conferir nossa Agenda de Eventos, que traz atividades e palestras sobre saúde na comunidade, como eventos dedicados à saúde da mulher, do homem e outras temáticas relevantes. Manteremos você informado sobre todas as nossas programações.</p>
+        <img src="saude.jpg" alt="Cuidando da Saúde">
+    </section>
+
+    <footer>
+        <p>© 2024 Saúde Comunitária - UBS Alves Dias</p>
+    </footer>
+
+    <script>
+        // Seleciona todos os links do menu de navegação
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        // Adiciona um evento de clique a cada link
+        navLinks.forEach(link => {
+            link.addEventListener("click", function() {
+                // Remove a classe 'active' de todos os links
+                navLinks.forEach(link => link.classList.remove("active"));
+                // Adiciona a classe 'active' ao link clicado
+                this.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
